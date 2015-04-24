@@ -13,7 +13,8 @@ class MysqlStringStrategy implements StrategyInterface
         }
     }
 
-    public function leftJoin($expression, $query_to_append)
+    public function leftJoin($expression, $on, $query_to_append)
     {
+        return $query_to_append . "\nLEFT JOIN " . $expression . ' ON ' . $on;
     }
 }
