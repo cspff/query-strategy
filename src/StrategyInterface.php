@@ -4,6 +4,6 @@ namespace AppDevl\QueryStrategy;
 
 interface StrategyInterface
 {
-    public function select($expression, $query_to_append);
-    public function leftJoin($expression, $on, $query_to_append);
+    public function select($query_to_append, $expression);
+    public function leftJoin($query_to_append, $expression, $on);
 }

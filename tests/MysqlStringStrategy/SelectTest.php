@@ -9,7 +9,7 @@ class SelectTest extends \PHPUnit_Framework_TestCase
     public function testWhenFirstElement_includesSelect()
     {
         $strategy = new MysqlStringStrategy();
-        $query = $strategy->select('*', '');
+        $query = $strategy->select('', '*');
         $this->assertEquals('SELECT *', $query);
     }
 
@@ -19,7 +19,7 @@ class SelectTest extends \PHPUnit_Framework_TestCase
 
 	// Ramdom case in "SELECT" so that we know the implementation is
 	// case-insensitive:
-	$query = $strategy->select('bar', 'SeLEcT foo');
+	$query = $strategy->select('SeLEcT foo', 'bar');
         $this->assertEquals('SeLEcT foo, bar', $query);
     }
 }
