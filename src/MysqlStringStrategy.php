@@ -30,10 +30,10 @@ class MysqlStringStrategy implements StrategyInterface
         }
     }
 
-    public function leftJoin($query_to_append, $expression, $on)
+    public function leftJoin($query_to_append, $expression)
     {
         $expression = $this->translate($expression);
-        return $query_to_append . "\nLEFT JOIN " . $expression . ' ON ' . $on;
+        return $query_to_append . "\nLEFT JOIN " . $expression;
     }
 
     private function translate($expression)
