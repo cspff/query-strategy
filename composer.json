@@ -1,8 +1,11 @@
 {
-    "autoload": {
-        "psr-4": {"AppDevl\\QueryStrategy\\": "src/"}
-    },
+    "name": "appdevl/query-strategy",
+    "homepage": "http://github.com/thomasalbright/query-strategy",
+    "license": "MIT",
     "require-dev": {
         "phpunit/phpunit": "4.6.*"
+    },
+    "autoload": {
+        "psr-4": {"AppDevl\\QueryStrategy\\": "src/"}
     }
 }
