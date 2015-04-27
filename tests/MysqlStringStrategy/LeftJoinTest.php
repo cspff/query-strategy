@@ -6,7 +6,7 @@ use AppDevl\QueryStrategy\MysqlStringStrategy;
 
 class LeftJoinTest extends \PHPUnit_Framework_TestCase
 {
-    public function testincludesLeftJoin()
+    public function testIncludesLeftJoin()
     {
         $strategy = new MysqlStringStrategy();
         $query = $strategy->leftJoin('SELECT * from first_table', 'second_table');

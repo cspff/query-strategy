@@ -6,7 +6,7 @@ use AppDevl\QueryStrategy\MysqlStringStrategy;
 
 class FromTest extends \PHPUnit_Framework_TestCase
 {
-    public function testWhenFirstElement_includesFrom()
+    public function testWhenFirstElementItIncludesFrom()
     {
         $strategy = new MysqlStringStrategy();
         $query = $strategy->from('SELECT *', 'foo');
@@ -16,13 +16,13 @@ class FromTest extends \PHPUnit_Framework_TestCase
     /**
      * @expectedException AppDevl\QueryStrategy\InvalidResultingQueryException
      */
-    public function testWhenNotFirstElement_throwsException()
+    public function testWhenNotFirstElementItThrowsException()
     {
         $strategy = new MysqlStringStrategy();
 
-	// Ramdom case in "FROM" so that we know the implementation is
-	// case-insensitive:
-	$query = $strategy->from('SELECT foo FroM bar', 'baz');
+        // Random case in "FROM" so that we know the implementation is
+        // case-insensitive:
+        $query = $strategy->from('SELECT foo FroM bar', 'baz');
     }
     public function testTranslates()
     {

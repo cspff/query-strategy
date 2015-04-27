@@ -6,20 +6,20 @@ use AppDevl\QueryStrategy\MysqlStringStrategy;
 
 class GroupByTest extends \PHPUnit_Framework_TestCase
 {
-    public function testWhenFirstElement_includesGroupBy()
+    public function testWhenFirstElementItIncludesGroupBy()
     {
         $strategy = new MysqlStringStrategy();
         $query = $strategy->groupBy('SELECT * FROM foo', 'bar');
         $this->assertEquals('SELECT * FROM foo GROUP BY bar', $query);
     }
 
-    public function testWhenNotFirstElement_commaInsteadOfGroupBy()
+    public function testWhenNotFirstElementItUsesCommaInsteadOfGroupBy()
     {
         $strategy = new MysqlStringStrategy();
 
-	// Ramdom case in "GROUP BY" so that we know the implementation is
-	// case-insensitive:
-	$query = $strategy->groupBy('SELECT * from foo GrOUp bY bar', 'baz');
+        // Random case in "GROUP BY" so that we know the implementation is
+        // case-insensitive:
+        $query = $strategy->groupBy('SELECT * from foo GrOUp bY bar', 'baz');
         $this->assertEquals('SELECT * from foo GrOUp bY bar, baz', $query);
     }
     public function testTranslates()

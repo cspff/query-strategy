@@ -48,8 +48,7 @@ class MysqlStringStrategy implements StrategyInterface
 
     private function translate($expression)
     {
-        if (array_key_exists($expression, $this->translations))
-        {
+        if (array_key_exists($expression, $this->translations)) {
             $expression = $this->translations[$expression];
         }
         return $expression;
