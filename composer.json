@@ -2,6 +2,9 @@
     "name": "appdevl/query-strategy",
     "homepage": "http://github.com/thomasalbright/query-strategy",
     "license": "MIT",
+    "require": {
+        "php": ">=5.3"
+    },
     "require-dev": {
         "phpunit/phpunit": "4.6.*"
     },
