@@ -36,6 +36,16 @@ class MysqlStringStrategy implements StrategyInterface
         return $query_to_append . "\nLEFT JOIN " . $expression;
     }
 
+    public function groupBy($query_to_append, $expression)
+    {
+        $expression = $this->translate($expression);
+        if (stripos($query_to_append, 'GROUP BY') !== false) {
+            return $query_to_append . ', ' . $expression;
+        } else {
+            return $query_to_append . ' GROUP BY ' . $expression;
+        }
+    }
+
     private function translate($expression)
     {
         if (array_key_exists($expression, $this->translations))
