@@ -24,7 +24,7 @@ class SelectTest extends \PHPUnit_Framework_TestCase
     }
     public function testTranslates()
     {
-        $strategy = new MysqlStringStrategy(['to replace' => 'replaced']);
+        $strategy = new MysqlStringStrategy(array('to replace' => 'replaced'));
         $query = $strategy->select('', 'to replace');
         $this->assertEquals('SELECT replaced', $query);
     }

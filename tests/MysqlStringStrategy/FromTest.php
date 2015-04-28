@@ -26,7 +26,7 @@ class FromTest extends \PHPUnit_Framework_TestCase
     }
     public function testTranslates()
     {
-        $strategy = new MysqlStringStrategy(['to replace' => 'replaced']);
+        $strategy = new MysqlStringStrategy(array('to replace' => 'replaced'));
         $query = $strategy->from('SELECT *', 'to replace');
         $this->assertEquals('SELECT * FROM replaced', $query);
     }

@@ -24,7 +24,7 @@ class GroupByTest extends \PHPUnit_Framework_TestCase
     }
     public function testTranslates()
     {
-        $strategy = new MysqlStringStrategy(['to replace' => 'replaced']);
+        $strategy = new MysqlStringStrategy(array('to replace' => 'replaced'));
         $query = $strategy->groupBy('SELECT * FROM foo', 'to replace');
         $this->assertEquals('SELECT * FROM foo GROUP BY replaced', $query);
     }

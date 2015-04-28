@@ -15,7 +15,7 @@ class LeftJoinTest extends \PHPUnit_Framework_TestCase
 
     public function testTranslates()
     {
-        $strategy = new MysqlStringStrategy(['to replace' => 'replaced']);
+        $strategy = new MysqlStringStrategy(array('to replace' => 'replaced'));
         $query = $strategy->leftJoin('SELECT * from first_table', 'to replace', '');
         $this->assertEquals("SELECT * from first_table\nLEFT JOIN replaced", $query);
     }
