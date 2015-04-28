@@ -2,14 +2,8 @@
 
 namespace AppDevl\QueryStrategy;
 
-class MysqlStringStrategy implements StrategyInterface
+class MysqlStringStrategy extends TranslatingStrategy
 {
-    private $translations;
-    public function __construct(array $translations = [])
-    {
-        $this->translations = $translations;
-    }
-
     public function select($query_to_append, $expression)
     {
         $expression = $this->translate($expression);
@@ -44,13 +38,5 @@ class MysqlStringStrategy implements StrategyInterface
         } else {
             return $query_to_append . ' GROUP BY ' . $expression;
         }
-    }
-
-    private function translate($expression)
-    {
-        if (array_key_exists($expression, $this->translations)) {
-            $expression = $this->translations[$expression];
-        }
-        return $expression;
     }
 }
