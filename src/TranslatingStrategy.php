@@ -37,11 +37,6 @@ abstract class TranslatingStrategy implements StrategyInterface
 {
     protected $translations;
 
-    abstract public function select($query_to_append, $expression);
-    abstract public function leftJoin($query_to_append, $expression);
-    abstract public function from($query_to_append, $expression);
-    abstract public function groupBy($query_to_append, $expression);
-
     public function __construct(array $translations = array())
     {
         $this->translations = $translations;
